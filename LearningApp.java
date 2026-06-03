@@ -16,6 +16,10 @@ public class LearningApp{
 
     System.out.println("あなたが選んだ番号は " + choice + " です。 ");
 
+    if(choice == 1){
+      System.out.println("Javaはプログラミング言語です。");
+    }
+
     scanner.close();
     
   }
