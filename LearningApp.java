@@ -1,8 +1,10 @@
 import java.util.Scanner; //Scannerって書いたら、java/util/Scannerのことだよって意味
 
-public class LearningApp{
-  public static void main(String[] args){
-    Scanner scanner = new Scanner(System.in); //System.inはキーボードからの入力を表す
+public class LearningApp {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in); // System.inはキーボードからの入力を表す
+
+    int choice;
 
     System.out.println("===Java学習アプリ===");
     System.out.println("1. Javaとは");
@@ -12,15 +14,31 @@ public class LearningApp{
     System.out.println("5. 繰り返し");
     System.out.println("0. 終了");
 
-    int choice = scanner.nextInt();
+    while (true) {
 
-    System.out.println("あなたが選んだ番号は " + choice + " です。 ");
+      choice = scanner.nextInt(); //初期化されてない変数（入力されてない）やつがあると、エラーが発生するから、これを先に書かないとエラーが発生する
+      System.out.println("あなたが選んだ番号は " + choice + " です。 ");
 
-    if(choice == 1){
-      System.out.println("Javaはプログラミング言語です。");
+      if(choice == 0){
+        break;
+      }
+      if (choice == 1) {
+        System.out.println("Javaはプログラミング言語です。");
+      } else if (choice == 2) {
+        System.out.println("変数はデータを保存する箱です。");
+      } else if (choice == 3) {
+        System.out.println("演算子は計算や比較を行うための記号です。");
+      } else if (choice == 4) {
+        System.out.println("条件分岐は条件によって処理を変える仕組みです。");
+      } else if (choice == 5) {
+        System.out.println("繰り返しは同じ処理を何度も実行する仕組みです。");
+      } else {
+        System.out.println("存在しない番号です。");
+      }
     }
+    System.out.println("終了します。");
 
     scanner.close();
-    
+
   }
 }
