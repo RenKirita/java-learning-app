@@ -23,15 +23,25 @@ public class LearningApp {
         break;
       }
       if (choice == 1) {
-        showJavaInfo();
+        Lesson javaLesson = new Lesson("1. Javaとは", "Javaはプログラミング言語です。");
+        javaLesson.showInfo();
+
       } else if (choice == 2) {
-        showVariableInfo();
+        Lesson variableLesson = new Lesson("2. 変数", "変数はデータを保存する箱です。");
+        variableLesson.showInfo();
+
       } else if (choice == 3) {
-        showOperatorInfo();
+        Lesson OperatorLesson = new Lesson("3. 演算子", "演算子は計算や比較を行うための記号です。");
+        OperatorLesson.showInfo();
+
       } else if (choice == 4) {
-        showTermsInfo();
+        Lesson TermsLesson = new Lesson("4. 条件分岐", "条件分岐は条件によって処理を変える仕組みです。");
+        TermsLesson.showInfo();
+        
       } else if (choice == 5) {
-        showRepetitionInfo();
+        Lesson RepetitionLesson = new Lesson("5. 繰り返し", "繰り返しは同じ処理を何度も実行する仕組みです。");
+        RepetitionLesson.showInfo();
+        
       } else {
         showInvalidNumberInfo();
       }
