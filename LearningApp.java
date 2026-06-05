@@ -23,17 +23,17 @@ public class LearningApp {
         break;
       }
       if (choice == 1) {
-        System.out.println("Javaはプログラミング言語です。");
+        showJavaInfo();
       } else if (choice == 2) {
-        System.out.println("変数はデータを保存する箱です。");
+        showVariableInfo();
       } else if (choice == 3) {
-        System.out.println("演算子は計算や比較を行うための記号です。");
+        showOperatorInfo();
       } else if (choice == 4) {
-        System.out.println("条件分岐は条件によって処理を変える仕組みです。");
+        showTermsInfo();
       } else if (choice == 5) {
-        System.out.println("繰り返しは同じ処理を何度も実行する仕組みです。");
+        showRepetitionInfo();
       } else {
-        System.out.println("存在しない番号です。");
+        showInvalidNumberInfo();
       }
     }
     System.out.println("終了します。");
@@ -41,4 +41,23 @@ public class LearningApp {
     scanner.close();
 
   }
+  public static void showJavaInfo(){
+    System.out.println("Javaはプログラミング言語です"); //staticとはインスタンスを作らなくても使えるもの
+  }
+  public static void showVariableInfo(){
+    System.out.println("変数はデータを保存する箱です。"); //メソッド名は区切りを大文字にする（キャメルケース）
+  }
+  public static void showOperatorInfo(){
+    System.out.println("演算子は計算や比較を行うための記号です。");
+  }
+  public static void showTermsInfo(){
+    System.out.println("条件分岐は条件によって処理を変える仕組みです。");
+  }
+  public static void showRepetitionInfo(){
+    System.out.println("繰り返しは同じ処理を何度も実行する仕組みです。");
+  }
+  public static void showInvalidNumberInfo(){
+    System.out.println("存在しない番号です。");
+  }
+
 }
