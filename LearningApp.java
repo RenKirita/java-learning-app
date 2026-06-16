@@ -6,13 +6,6 @@ public class LearningApp {
 
     int choice;
 
-    
-    // System.out.println("1. Javaとは");
-    // System.out.println("2. 変数");
-    // System.out.println("3. 演算子");
-    // System.out.println("4. 条件分岐");
-    // System.out.println("5. 繰り返し");
-
     Lesson[] lessons = new Lesson[5];
 
     lessons[0] = new Lesson("1.Javaとは", "Javaはプログラミング言語です。", "Javaはプログラミング言語ですか？", "yes");
@@ -21,30 +14,27 @@ public class LearningApp {
     lessons[3] = new Lesson("4. 条件分岐", "条件分岐は条件によって処理を変える仕組みです。", "条件分岐は条件によって処理を変える仕組みですか？", "yes");
     lessons[4] = new Lesson("5. 繰り返し", "繰り返しは同じ処理を何度も実行する仕組みです。", "繰り返しは同じ処理を何度も実行する仕組みですか？", "yes");
 
-    System.out.println("===Java学習アプリ===");
-    for(int i = 0; i < lessons.length; i++){
-      System.out.println(lessons[i].title);
-    }
-
-    System.out.println("0. 終了");
-
     while (true) {
-      try{
-      // choice = scanner.nextInt(); // 初期化されてない変数（入力されてないやつ）があると、エラーが発生するから、これを先に書かないとエラーが発生する
 
-      String input = scanner.nextLine();
-      choice = Integer.parseInt(input); //Integer.parseInt()は文字列(String)をint型に変換するメソッド
+      showMenu(lessons);
 
-    }catch(NumberFormatException e){
-      System.out.println("数字を入力してください。");
-      // scanner.nextLine(); //1行読み取って捨てる
-      continue;
-    }catch(Exception e){
-      System.out.println("予期せぬエラーです。");
-      // scanner.nextLine(); //1行読み取って捨てる
-      e.printStackTrace();
-      break;
-    }
+      try {
+        // choice = scanner.nextInt(); //
+        // 初期化されてない変数（入力されてないやつ）があると、エラーが発生するから、これを先に書かないとエラーが発生する
+
+        String input = scanner.nextLine();
+        choice = Integer.parseInt(input); // Integer.parseInt()は文字列(String)をint型に変換するメソッド
+
+      } catch (NumberFormatException e) {
+        System.out.println("数字を入力してください。");
+        // scanner.nextLine(); //1行読み取って捨てる
+        continue;
+      } catch (Exception e) {
+        System.out.println("予期せぬエラーです。");
+        // scanner.nextLine(); //1行読み取って捨てる
+        e.printStackTrace();
+        break;
+      }
 
       System.out.println("あなたが選んだ番号は " + choice + " です。 ");
       // scanner.nextLine();
@@ -74,6 +64,18 @@ public class LearningApp {
     System.out.println("終了します。");
 
     scanner.close();
+  }
+
+  public static void showMenu(Lesson[] lessons) {
+    System.out.println("===Java学習アプリ===");
+
+    for (int i = 0; i < lessons.length; i++) {
+
+      System.out.println(lessons[i].title);
+
+    }
+
+    System.out.println("0. 終了");
   }
 
 }
