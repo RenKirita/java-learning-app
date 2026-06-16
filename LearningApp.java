@@ -6,13 +6,12 @@ public class LearningApp {
 
     int choice;
 
-    System.out.println("===Java学習アプリ===");
-    System.out.println("1. Javaとは");
-    System.out.println("2. 変数");
-    System.out.println("3. 演算子");
-    System.out.println("4. 条件分岐");
-    System.out.println("5. 繰り返し");
-    System.out.println("0. 終了");
+    
+    // System.out.println("1. Javaとは");
+    // System.out.println("2. 変数");
+    // System.out.println("3. 演算子");
+    // System.out.println("4. 条件分岐");
+    // System.out.println("5. 繰り返し");
 
     Lesson[] lessons = new Lesson[5];
 
@@ -21,6 +20,13 @@ public class LearningApp {
     lessons[2] = new Lesson("3. 演算子", "演算子は計算や比較を行うための記号です。", "演算子は計算や比較を行うための記号ですか？", "yes");
     lessons[3] = new Lesson("4. 条件分岐", "条件分岐は条件によって処理を変える仕組みです。", "条件分岐は条件によって処理を変える仕組みですか？", "yes");
     lessons[4] = new Lesson("5. 繰り返し", "繰り返しは同じ処理を何度も実行する仕組みです。", "繰り返しは同じ処理を何度も実行する仕組みですか？", "yes");
+
+    for(int i = 0; i < lessons.length; i++){
+      System.out.println("===Java学習アプリ===");
+      System.out.println(lessons[i].title);
+    }
+
+    System.out.println("0. 終了");
 
     while (true) {
 
@@ -40,8 +46,8 @@ public class LearningApp {
         lessons[choice - 1].showQuiz();
 
         String userAnswer = scanner.nextLine();
-        
-        if (lessons[choice - 1].checkAnswer(userAnswer) == true) {
+
+        if (lessons[choice - 1].checkAnswer(userAnswer)) {
           System.out.println("正解です。");
         } else {
           System.out.println("不正解です。");
