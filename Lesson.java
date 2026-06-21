@@ -1,14 +1,12 @@
 public class Lesson{
-  String title;
-  String description;
-  String quiz;
-  String answer;
+  private String title;
+  private String description;
+  private Question[] questions;
 
-  Lesson(String title, String description, String quiz, String answer){
+  public Lesson(String title, String description, Question[] questions){
     this.title = title; //引数titleはコンストラクタ実行中だけ存在する引数
     this.description = description; //だから、メンバ変数に代入する必要がある
-    this.quiz = quiz;
-    this.answer = answer;
+    this.questions = questions;
   }
 
   public void showInfo(){
@@ -16,14 +14,34 @@ public class Lesson{
     System.out.println(this.description);
   }
 
-  public void showQuiz(){
-    System.out.println(this.quiz);
-    // System.out.println(this.answer); 答えは一緒に表示しない
+  // public void showQuiz(){
+  //   System.out.println(this.quiz);
+  //   // System.out.println(this.answer); 答えは一緒に表示しない
+  // }
+
+  public String getTitle(){
+    return this.title;
   }
 
-  public boolean checkAnswer(String userAnswer) {
+  public void setTitle(String title){
+    this.title = title;
+  }
 
-    return userAnswer.equals(this.answer);
+  public String getDescription(){
+    return this.description;
+  }
+  
+    public Question[] getQuestions(){
+    return this.questions;
+  }
 
-} //役割を完全に分けて、「正誤の判定」はLessonクラス、「表示」はLearningApppクラスとした
+  // public String getQuiz(){
+  //   return this.quiz;
+  // }
+
+//   public boolean checkAnswer(String userAnswer) {
+
+//     return userAnswer.equals(this.answer);
+
+// } //役割を完全に分けて、「正誤の判定」はLessonクラス、「表示」はLearningApppクラスとした
 }
